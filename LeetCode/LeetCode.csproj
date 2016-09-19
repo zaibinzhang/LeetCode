@@ -52,6 +52,7 @@
     <Compile Include="Algorithm\PalindromeNumber.cs" />
     <Compile Include="Algorithm\ReverseInteger.cs" />
     <Compile Include="Algorithm\RomantoInteger.cs" />
+    <Compile Include="Algorithm\SimplifyPath.cs" />
     <Compile Include="Algorithm\StringtoInteger%28atoi%29.cs" />
     <Compile Include="Algorithm\TwoSum.cs" />
     <Compile Include="Algorithm\ZigZagConversion.cs" />
