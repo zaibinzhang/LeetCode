@@ -12,9 +12,8 @@ namespace LeetCode
         static void Main(string[] args)
         {
             Solution sol = new Solution();
-            Console.WriteLine(sol.SimplifyPath("/home/foo/.ssh/../.ssh2/authorized_keys/"));
-
-
+            var ret = sol.Subsets(new[] { 1, 2, 3 });
+            Console.WriteLine(ret);
             Console.ReadKey();
         }
     }
