@@ -56,6 +56,7 @@
     <Compile Include="Algorithm\StringtoInteger%28atoi%29.cs" />
     <Compile Include="Algorithm\Subsets.cs" />
     <Compile Include="Algorithm\TwoSum.cs" />
+    <Compile Include="Algorithm\WordSearch.cs" />
     <Compile Include="Algorithm\ZigZagConversion.cs" />
     <Compile Include="Model\ListNode.cs" />
     <Compile Include="Program.cs" />

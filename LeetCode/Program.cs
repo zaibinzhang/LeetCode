@@ -12,8 +12,16 @@ namespace LeetCode
         static void Main(string[] args)
         {
             Solution sol = new Solution();
-            var ret = sol.Subsets(new[] { 1, 2, 3 });
-            Console.WriteLine(ret);
+
+            char[,] board = new char[,]
+            {
+                {'A', 'B', 'C', 'E'},
+                {'S', 'F', 'C', 'S'},
+                {'A', 'D', 'E', 'E'}
+            };
+
+            Console.WriteLine(sol.Exist(board, "ABCB"));
+
             Console.ReadKey();
         }
     }
