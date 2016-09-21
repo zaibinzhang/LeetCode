@@ -27,13 +27,15 @@ namespace LeetCode.Algorithm
                 return false;
             }
 
+            if (list.Count == 0 && (Exist(board, word, list, new Point(p.X + 1, p.Y)) ||
+                       Exist(board, word, list, new Point(p.X, p.Y + 1))))
+            {
+                return true;
+            }
+
             if (word[0] != board[p.X, p.Y])
             {
-                if (list.Count == 0)
-                {
-                    return Exist(board, word, list, new Point(p.X + 1, p.Y)) ||
-                           Exist(board, word, list, new Point(p.X, p.Y + 1));
-                }
+
 
                 return false;
             }
@@ -80,5 +82,5 @@ namespace LeetCode.Algorithm
         }
     }
 
-    
+
 }
