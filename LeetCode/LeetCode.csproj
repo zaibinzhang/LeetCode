@@ -53,6 +53,7 @@
     <Compile Include="Algorithm\RemoveDuplicatesfromSortedArrayII.cs" />
     <Compile Include="Algorithm\ReverseInteger.cs" />
     <Compile Include="Algorithm\RomantoInteger.cs" />
+    <Compile Include="Algorithm\SearchinRotatedSortedArray.cs" />
     <Compile Include="Algorithm\SimplifyPath.cs" />
     <Compile Include="Algorithm\StringtoInteger%28atoi%29.cs" />
     <Compile Include="Algorithm\Subsets.cs" />
