@@ -12,14 +12,8 @@ namespace LeetCode
         static void Main(string[] args)
         {
             Solution sol = new Solution();
-            //            ["CAA","AAA","BCD"]
-            //"AAB"
-            char[,] board = new char[,]
-            {
-                {'A', 'B'}, {'C','D' }
-            };
 
-            Console.WriteLine(sol.Exist(board, "ACDB"));
+            Console.WriteLine(sol.RemoveDuplicates(new[] { 1, 1, 1, 2, 2, 3 }));
 
             Console.ReadKey();
         }
