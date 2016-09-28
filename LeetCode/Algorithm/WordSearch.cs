@@ -6,81 +6,96 @@ namespace LeetCode.Algorithm
 {
     public partial class Solution
     {
-        public bool Exist(char[,] board, string word)
+        private class Node
         {
-            if (string.IsNullOrEmpty(word))
-            {
-                return true;
-            }
-            return Exist(board, word, new List<Point>(), new Point(0, 0));
-        }
+            public int X;
 
-        private bool Exist(char[,] board, string word, List<Point> list, Point p)
-        {
-            if (p.X < 0 || p.Y < 0 || p.X >= board.GetLength(0) || p.Y >= board.GetLength(1))
-            {
-                return false;
-            }
+            public int Y;
 
-            if (list.Contains(p))
-            {
-                return false;
-            }
+            public char Val;
 
-            if (list.Count == 0 && (Exist(board, word, list, new Point(p.X + 1, p.Y)) ||
-                       Exist(board, word, list, new Point(p.X, p.Y + 1))))
-            {
-                return true;
-            }
+            public int Dir;//0上,1右,2下,3左
 
-            if (word[0] != board[p.X, p.Y])
-            {
-
-
-                return false;
-            }
-
-            List<Point> temp = list.ToList();
-
-            temp.Add(p);
-
-            word = word.Remove(0, 1);
-
-            if (word.Length == 0)
-            {
-                return true;
-            }
-
-            return Exist(board, word, temp, new Point(p.X + 1, p.Y)) ||
-                   Exist(board, word, temp, new Point(p.X - 1, p.Y)) ||
-                   Exist(board, word, temp, new Point(p.X, p.Y + 1)) ||
-                   Exist(board, word, temp, new Point(p.X, p.Y - 1));
-
-        }
-
-        private class Point
-        {
-            public Point(int x, int y)
+            public Node(int x, int y, char val, int dir)
             {
                 X = x;
                 Y = y;
-            }
-
-            public int X { get; set; }
-
-            public int Y { get; set; }
-
-            public override bool Equals(object obj)
-            {
-                Point that = obj as Point;
-                if (that == null)
-                {
-                    return false;
-                }
-                return this.X == that.X && this.Y == that.Y;
+                Val = val;
+                Dir = dir;
             }
         }
+
+
+        public bool Exist(char[,] board, string word)
+        {
+            Stack<Node> stack = new Stack<Node>();
+            for (int i = 0; i < board.GetLength(0); i++)
+            {
+                for (int j = 0; j < board.GetLength(1); j++)
+                {
+                    if (board[i, j] == word[0])
+                    {
+                        stack.Push(new Node(i, j, board[i, j], 0));
+                        board[i, j] = '.';
+                        int n = 1;
+                        while (stack.Count != 0)
+                        {
+                            if (stack.Count == word.Length)
+                            {
+                                return true;
+                            }
+                            Node node = stack.Peek();
+                            if (node.Dir == 0)
+                            {
+                                node.Dir = 1;
+                                if (node.Y != 0 && board[node.X, node.Y - 1] == word[n])
+                                {
+                                    stack.Push(new Node(node.X, node.Y - 1, word[n++], 0));
+                                    board[node.X, node.Y - 1] = '.';
+                                    continue;
+                                }
+                            }
+
+                            if (node.Dir == 1)
+                            {
+                                node.Dir = 2;
+                                if (node.X != board.GetLength(0) - 1 && board[node.X + 1, node.Y] == word[n])
+                                {
+                                    stack.Push(new Node(node.X + 1, node.Y, word[n++], 0));
+                                    board[node.X + 1, node.Y] = '.';
+                                    continue;
+                                }
+                            }
+
+                            if (node.Dir == 2)
+                            {
+                                node.Dir = 3;
+                                if (node.Y != board.GetLength(1) - 1 && board[node.X, node.Y + 1] == word[n])
+                                {
+                                    stack.Push(new Node(node.X, node.Y + 1, word[n++], 0));
+                                    board[node.X, node.Y + 1] = '.';
+                                    continue;
+                                }
+                            }
+
+                            if (node.Dir == 3)
+                            {
+                                node.Dir = 4;
+                                if (node.X != 0 && board[node.X - 1, node.Y] == word[n])
+                                {
+                                    stack.Push(new Node(node.X - 1, node.Y, word[n++], 0));
+                                    board[node.X - 1, node.Y] = '.';
+                                    continue;
+                                }
+                            }
+                            stack.Pop();
+                            board[node.X, node.Y] = node.Val;
+                            n--;
+                        }
+                    }
+                }
+            }
+            return false;
+        }
     }
-
-
 }

@@ -12,16 +12,14 @@ namespace LeetCode
         static void Main(string[] args)
         {
             Solution sol = new Solution();
-//            ["CAA","AAA","BCD"]
-//"AAB"
+            //            ["CAA","AAA","BCD"]
+            //"AAB"
             char[,] board = new char[,]
             {
-                {'C', 'A', 'A'},
-                {'A', 'A', 'A'},
-                {'B', 'C', 'D'}
+                {'A', 'B'}, {'C','D' }
             };
 
-            Console.WriteLine(sol.Exist(board, "AAB"));
+            Console.WriteLine(sol.Exist(board, "ACDB"));
 
             Console.ReadKey();
         }
