@@ -50,6 +50,7 @@
     <Compile Include="Algorithm\LongestCommonPrefix.cs" />
     <Compile Include="Algorithm\LongestPalindromicSubstring.cs" />
     <Compile Include="Algorithm\LongestSubstringWithoutRepeatingCharacters.cs" />
+    <Compile Include="Algorithm\Merge.cs" />
     <Compile Include="Algorithm\PalindromeNumber.cs" />
     <Compile Include="Algorithm\PartitionList.cs" />
     <Compile Include="Algorithm\RemoveDuplicatesfromSortedArrayII.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="Algorithm\TwoSum.cs" />
     <Compile Include="Algorithm\WordSearch.cs" />
     <Compile Include="Algorithm\ZigZagConversion.cs" />
+    <Compile Include="Model\Interval.cs" />
     <Compile Include="Model\ListNode.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
