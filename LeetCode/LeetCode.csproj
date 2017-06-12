@@ -51,6 +51,7 @@
     <Compile Include="Algorithm\LongestPalindromicSubstring.cs" />
     <Compile Include="Algorithm\LongestSubstringWithoutRepeatingCharacters.cs" />
     <Compile Include="Algorithm\Merge.cs" />
+    <Compile Include="Algorithm\NumDecodings.cs" />
     <Compile Include="Algorithm\PalindromeNumber.cs" />
     <Compile Include="Algorithm\PartitionList.cs" />
     <Compile Include="Algorithm\RemoveDuplicatesfromSortedArrayII.cs" />
