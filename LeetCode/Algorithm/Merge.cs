@@ -12,6 +12,10 @@ namespace LeetCode.Algorithm
             intervals = intervals.OrderBy(i => i.start).ToList();
             foreach (Interval interval in intervals)
             {
+                if (list.Count > 0 && list[list.Count - 1].end >= interval.end)
+                {
+                    continue;
+                }
                 if (list.Count > 0 && list[list.Count - 1].end >= interval.start)
                 {
                     list[list.Count - 1].end = interval.end;
