@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Algorithm\AddTwoNumbers.cs" />
     <Compile Include="Algorithm\ContainerWithMostWater.cs" />
+    <Compile Include="Algorithm\GroupAnagrams.cs" />
     <Compile Include="Algorithm\IntegertoRoman.cs" />
     <Compile Include="Algorithm\LongestCommonPrefix.cs" />
     <Compile Include="Algorithm\LongestPalindromicSubstring.cs" />
