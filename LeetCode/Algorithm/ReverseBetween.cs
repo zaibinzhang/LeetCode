@@ -8,28 +8,34 @@ namespace LeetCode.Algorithm
         //92. Reverse Linked List II
         public ListNode ReverseBetween(ListNode head, int m, int n)
         {
-            ListNode mhead, thead = head, nhead;
-            int i;
-            if (m != 1)
+            if (m == n)
             {
-                i = 1;
-                while (i < m)
-                {
-                    i++;
-                    thead = thead.next;
-                }
-                mhead = thead;
+                return head;
             }
-            i = 1;
-            thead = head;
-            while (i < n)
+            List<ListNode> list = new List<ListNode>();
+            ListNode tempNode = head;
+            while (tempNode != null)
             {
-                i++;
-                thead = thead.next;
+                list.Add(tempNode);
+                tempNode = tempNode.next;
             }
-            nhead = thead;
-
-            return null;
+            if (m > 1)
+            {
+                list[m - 2].next = list[n - 1];
+                list[n - 2].next = list[m - 1];
+                tempNode = list[m - 1].next;
+                list[m - 1].next = list[n - 1].next;
+                list[n - 1].next = tempNode;
+            }
+            else
+            {
+                list[n - 2].next = list[m - 1];
+                tempNode = list[m - 1].next;
+                list[m - 1].next = list[n - 1].next;
+                list[n - 1].next = tempNode;
+                head = list[n - 1];
+            }
+            return head;
         }
     }
 }
