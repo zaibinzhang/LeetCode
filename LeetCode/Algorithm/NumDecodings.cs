@@ -4,6 +4,8 @@ namespace LeetCode.Algorithm
 {
     public partial class Solution
     {
+        //91. Decode Ways
+        //问题出于没有把已经走过的路径保存下来
         public int NumDecodings(string s)
         {
             if (string.IsNullOrEmpty(s) || s[0] == '0')
