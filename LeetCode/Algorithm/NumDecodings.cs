@@ -13,38 +13,31 @@ namespace LeetCode.Algorithm
                 return 0;
             }
 
-            if (s.Length > 2)
+            int[] rs = new int[s.Length + 1];
+
+            rs[s.Length] = 1;
+
+            if (s[s.Length - 1] != '0')
             {
-                if (s[0] == '1' || s[0] == '2' && s[1] <= '6')
-                {
-                    if (s[1] == '0')
-                    {
-                        return NumDecodings(s.Substring(2));
-                    }
-                    return NumDecodings(s.Substring(1)) + NumDecodings(s.Substring(2));
-                }
-
-                return NumDecodings(s.Substring(1));
-
+                rs[s.Length - 1] = 1;
             }
 
-            if (s.Length == 2)
+            for (int i = s.Length - 2; i >= 0; i--)
             {
-                if ((s[0] == '1' || s[0] == '2' && s[1] <= '6') && s[1] != '0')
+                if (s[i] == '0')
                 {
-                    return 2;
+                    continue;
                 }
-                else if (s[0] >= '3' && s[1] == '0')
+                if (s[i] == '1' || s[i] == '2' && s[i + 1] <= '6')
                 {
-                    return 0;
+                    rs[i] = rs[i + 1] + rs[i + 2];
                 }
                 else
                 {
-                    return 1;
+                    rs[i] = rs[i + 1];
                 }
             }
-
-            return 1;
+            return rs[0];
         }
     }
 }
