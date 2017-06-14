@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Algorithm\AddTwoNumbers.cs" />
     <Compile Include="Algorithm\ContainerWithMostWater.cs" />
+    <Compile Include="Algorithm\GenerateTrees.cs" />
     <Compile Include="Algorithm\GroupAnagrams.cs" />
     <Compile Include="Algorithm\IntegertoRoman.cs" />
     <Compile Include="Algorithm\LongestCommonPrefix.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="Algorithm\ZigZagConversion.cs" />
     <Compile Include="Model\Interval.cs" />
     <Compile Include="Model\ListNode.cs" />
+    <Compile Include="Model\TreeNode.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
