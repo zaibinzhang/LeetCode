@@ -56,6 +56,7 @@
     <Compile Include="Algorithm\PartitionList.cs" />
     <Compile Include="Algorithm\RemoveDuplicatesfromSortedArrayII.cs" />
     <Compile Include="Algorithm\RemoveDuplicatesfromSortedListII.cs" />
+    <Compile Include="Algorithm\RestoreIpAddresses.cs" />
     <Compile Include="Algorithm\ReverseBetween.cs" />
     <Compile Include="Algorithm\ReverseInteger.cs" />
     <Compile Include="Algorithm\RomantoInteger.cs" />
