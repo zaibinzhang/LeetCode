@@ -42,5 +42,13 @@ namespace LeetCodeTests.Algorithm
             Solution sol = new Solution();
             Assert.AreEqual(sol.ReverseBetween(CreateListNode(new[] { 1, 2, 3, 4 }), 1, 4).ToString(), "[4,3,2,1]"); ;
         }
+
+
+        [TestMethod()]
+        public void ReverseBetweenTest4()
+        {
+            Solution sol = new Solution();
+            Assert.AreEqual(sol.ReverseBetween(CreateListNode(new[] { 1, 2, 3, 4, 5 }), 2, 5).ToString(), "[1,5,4,3,2]"); ;
+        }
     }
 }
