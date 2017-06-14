@@ -54,7 +54,9 @@
     <Compile Include="Algorithm\NumDecodingsTests.cs" />
     <Compile Include="Algorithm\RestoreIpAddressesTests.cs" />
     <Compile Include="Algorithm\ReverseBetweenTests.cs" />
+    <Compile Include="Algorithm\SolutionTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LeetCode\LeetCode.csproj">
