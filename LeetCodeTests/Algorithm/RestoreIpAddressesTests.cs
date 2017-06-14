@@ -12,13 +12,13 @@ namespace LeetCodeTests.Algorithm
         [TestMethod()]
         public void RestoreIpAddressesTest1()
         {
-            Assert.IsTrue(TestHelper.CompareList(_sol.RestoreIpAddresses("25525511135"), new List<string>() { "255.255.11.135", "255.255.111.35" }));
+            Assert.IsTrue(TestHelper.CompareListByOrder(_sol.RestoreIpAddresses("25525511135"), new List<string>() { "255.255.11.135", "255.255.111.35" }));
         }
 
         [TestMethod()]
         public void RestoreIpAddressesTest2()
         {
-            Assert.IsTrue(TestHelper.CompareList(_sol.RestoreIpAddresses("010010"), new List<string>() { "0.10.0.10", "0.100.1.0" }));
+            Assert.IsTrue(TestHelper.CompareListByOrder(_sol.RestoreIpAddresses("010010"), new List<string>() { "0.10.0.10", "0.100.1.0" }));
         }
     }
 }

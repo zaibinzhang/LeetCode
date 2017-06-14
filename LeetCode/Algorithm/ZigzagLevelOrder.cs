@@ -8,10 +8,10 @@ namespace LeetCode.Algorithm
         //103. Binary Tree Zigzag Level Order Traversal
         public IList<IList<int>> ZigzagLevelOrder(TreeNode root)
         {
-            return ZigzagLevelOrder(new List<TreeNode>() { root });
+            return ZigzagLevelOrder(new List<TreeNode>() { root }, true);
         }
 
-        private IList<IList<int>> ZigzagLevelOrder(List<TreeNode> nodes)
+        private IList<IList<int>> ZigzagLevelOrder(List<TreeNode> nodes, bool isLeft)
         {
             if (nodes.Count == 0)
             {
@@ -23,11 +23,24 @@ namespace LeetCode.Algorithm
             for (int i = 0; i < nodes.Count; i++)
             {
                 var n = nodes.Count - i - 1;
+                if (nodes[n]==null)
+                {
+                    continue;
+                }
                 list.Add(nodes[n].val);
-                nList.Add(nodes[n]);
+                if (!isLeft)
+                {
+                    nList.Add(nodes[n].right);
+                    nList.Add(nodes[n].left);
+                }
+                else
+                {
+                    nList.Add(nodes[n].left);
+                    nList.Add(nodes[n].right);
+                }
             }
             rList.Add(list);
-            var subList = ZigzagLevelOrder(nList);
+            var subList = ZigzagLevelOrder(nList, !isLeft);
             if (subList.Count != 0)
             {
                 rList.AddRange(subList);
