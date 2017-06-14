@@ -13,7 +13,8 @@ namespace LeetCode
         {
             Solution sol = new Solution();
 
-            Console.WriteLine(sol.NumDecodings("4757562545844617494555774581341211511296816786586787755257741178599337186486723247528324612117156948"));
+            var list = sol.GenerateTrees(3);
+            Console.WriteLine(list);
             
 
             Console.ReadKey();
