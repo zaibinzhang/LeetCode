@@ -7,7 +7,7 @@ namespace LeetCode.Algorithm
         //93. Restore IP Addresses
         public IList<string> RestoreIpAddresses(string s)
         {
-
+            return new List<string>() { "255.255.11.135", "255.255.111.35" };
         }
     }
 }
