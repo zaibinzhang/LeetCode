@@ -70,6 +70,7 @@
     <Compile Include="Algorithm\TwoSum.cs" />
     <Compile Include="Algorithm\WordSearch.cs" />
     <Compile Include="Algorithm\ZigZagConversion.cs" />
+    <Compile Include="Algorithm\ZigzagLevelOrder.cs" />
     <Compile Include="Model\Interval.cs" />
     <Compile Include="Model\ListNode.cs" />
     <Compile Include="Model\TreeNode.cs" />
