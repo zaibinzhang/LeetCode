@@ -48,6 +48,7 @@
     <Compile Include="Algorithm\GenerateTrees.cs" />
     <Compile Include="Algorithm\GroupAnagrams.cs" />
     <Compile Include="Algorithm\IntegertoRoman.cs" />
+    <Compile Include="Algorithm\IsValidBST.cs" />
     <Compile Include="Algorithm\LongestCommonPrefix.cs" />
     <Compile Include="Algorithm\LongestPalindromicSubstring.cs" />
     <Compile Include="Algorithm\LongestSubstringWithoutRepeatingCharacters.cs" />
