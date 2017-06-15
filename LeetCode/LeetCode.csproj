@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Algorithm\AddTwoNumbers.cs" />
+    <Compile Include="Algorithm\BuildTree.cs" />
     <Compile Include="Algorithm\ContainerWithMostWater.cs" />
     <Compile Include="Algorithm\GenerateTrees.cs" />
     <Compile Include="Algorithm\GroupAnagrams.cs" />
