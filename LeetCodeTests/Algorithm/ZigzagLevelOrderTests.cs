@@ -12,8 +12,7 @@ namespace LeetCodeTests.Algorithm
             TreeNode treeNode = TestHelper.CreateTreeNode("3,9,20,null,null,15,7");
             var list = _sol.ZigzagLevelOrder(treeNode);
             IList<IList<int>> listi = TestHelper.CreateILists("[[3],[20,9],[15,7]]");
-
-            Assert.IsTrue(true);
+            Assert.IsTrue(TestHelper.CompareLists(list, listi));
         }
     }
 }

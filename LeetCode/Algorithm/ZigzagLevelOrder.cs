@@ -39,7 +39,10 @@ namespace LeetCode.Algorithm
                     nList.Add(nodes[n].right);
                 }
             }
-            rList.Add(list);
+            if (list.Count!=0)
+            {
+                rList.Add(list);
+            }
             var subList = ZigzagLevelOrder(nList, !isLeft);
             if (subList.Count != 0)
             {

@@ -9,7 +9,7 @@ namespace LeetCodeTests
     {
         public static bool CompareListByOrder<T>(IList<T> thisList, IList<T> thatList) where T : IComparable
         {
-            if (thisList == thatList)
+            if (Equals(thisList, thatList))
             {
                 return true;
             }
@@ -35,7 +35,7 @@ namespace LeetCodeTests
 
         public static bool CompareList<T>(IList<T> thisList, IList<T> thatList) where T : IComparable
         {
-            if (thisList == thatList)
+            if (Equals(thisList, thatList))
             {
                 return true;
             }
@@ -119,7 +119,7 @@ namespace LeetCodeTests
         {
             IList<IList<int>> list = new List<IList<int>>();
             str = str.Substring(1, str.Length - 2);
-            var strs = str.Split(new string[] { "],[" }, StringSplitOptions.None);
+            var strs = str.Split(new[] { "],[" }, StringSplitOptions.None);
             foreach (string s in strs)
             {
                 var temp = s.Trim('[', ']');
@@ -132,6 +132,30 @@ namespace LeetCodeTests
                 list.Add(subList);
             }
             return list;
+        }
+
+        public static bool CompareLists<T>(IList<IList<T>> thisLists, IList<IList<T>> thatLists) where T : IComparable
+        {
+            if (Equals(thisLists, thatLists))
+            {
+                return true;
+            }
+            if (thisLists == null || thatLists == null)
+            {
+                return false;
+            }
+            if (thisLists.Count != thatLists.Count)
+            {
+                return false;
+            }
+            for (int i = 0; i < thatLists.Count; i++)
+            {
+                if (!CompareList(thatLists[i], thisLists[i]))
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }
