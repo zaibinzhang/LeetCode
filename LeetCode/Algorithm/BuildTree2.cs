@@ -12,7 +12,7 @@ namespace LeetCode.Algorithm
 
         public TreeNode BuildTree2(int start, int end, int index, int[] inorder, int[] postorder)
         {
-            if (start > end)
+            if (start > end || index < 0)
             {
                 return null;
             }
