@@ -7,13 +7,19 @@ namespace LeetCode.Algorithm
         //106. Construct Binary Tree from Inorder and Postorder Traversal
         public TreeNode BuildTree2(int[] inorder, int[] postorder)
         {
-            return BuildTree2(0, postorder.Length - 1, postorder.Length - 1, inorder, postorder);
+            int index = postorder.Length - 1;
+            return BuildTree2(0, postorder.Length - 1, ref index, inorder, postorder);
         }
 
-        public TreeNode BuildTree2(int start, int end, int index, int[] inorder, int[] postorder)
+        public TreeNode BuildTree2(int start, int end, ref int index, int[] inorder, int[] postorder)
         {
-            if (start > end || index < 0)
+            if (index < 0)
             {
+                return null;
+            }
+            if (start > end)
+            {
+                index++;
                 return null;
             }
             if (start == end)
@@ -33,9 +39,11 @@ namespace LeetCode.Algorithm
             }
             if (end > valIndex)
             {
-                node.right = BuildTree2(valIndex + 1, end, --index, inorder, postorder);
+                index--;
+                node.right = BuildTree2(valIndex + 1, end, ref index, inorder, postorder);
             }
-            node.left = BuildTree2(start, valIndex - 1, index - 1, inorder, postorder);
+            index--;
+            node.left = BuildTree2(start, valIndex - 1, ref index, inorder, postorder);
             return node;
         }
     }
