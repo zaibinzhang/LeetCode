@@ -8,7 +8,7 @@
         public TreeNode(int x) { val = x; }
         public override string ToString()
         {
-            return Log(this);
+            return Log(this).Trim(',', 'n', 'u', 'l');
         }
 
         private string Log(TreeNode node)
@@ -17,7 +17,7 @@
             {
                 return "null";
             }
-            return (node.val + "," + Log(node.left) + "," + Log(node.right)).Trim(',', 'n', 'u', 'l');
+            return node.val + "," + Log(node.left) + "," + Log(node.right);
         }
     }
 }
