@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using LeetCode.Model;
 
 namespace LeetCode.Algorithm
@@ -13,13 +14,58 @@ namespace LeetCode.Algorithm
                 return null;
             }
             TreeNode node = new TreeNode(preorder[0]);
-            var index = inorder.ToList().IndexOf(preorder[0]);
-            var firsti = inorder.Take(index);
-            var lasti = inorder.Skip(index + 1);
-            var firstp = from i in preorder where i != preorder[0] && !firsti.Contains(i) select i;
-            var lastp = from i in preorder where i != preorder[0] && !lasti.Contains(i) select i;
-            node.left = BuildTree(firstp.ToArray(), firsti.ToArray());
-            node.right = BuildTree(lastp.ToArray(), lasti.ToArray());
+            List<int> inleft = new List<int>();
+            List<int> inright = new List<int>();
+            List<int> preleft = new List<int>();
+            List<int> preright = new List<int>();
+            bool isleft = true;
+            for (int i = 0; i < inorder.Length; i++)
+            {
+                if (inorder[i] == preorder[0])
+                {
+                    isleft = false;
+                    continue;
+                }
+                if (isleft)
+                {
+                    inleft.Add(inorder[i]);
+                }
+                else
+                {
+                    inright.Add(inorder[i]);
+                }
+            }
+
+            if (inright.Count > 0)
+            {
+                isleft = true;
+                for (int i = 1; i < preorder.Length; i++)
+                {
+                    if (!isleft || inright.Contains(preorder[i]))
+                    {
+                        isleft = false;
+                    }
+                    if (isleft)
+                    {
+                        preleft.Add(preorder[i]);
+                    }
+                    else
+                    {
+                        preright.Add(preorder[i]);
+                    }
+                }
+            }
+            else
+            {
+                for (int i = 1; i < preorder.Length; i++)
+                {
+                    preleft.Add(preorder[i]);
+                }
+            }
+
+            node.left = BuildTree(preleft.ToArray(), inleft.ToArray());
+            node.right = BuildTree(preright.ToArray(), inright.ToArray());
+
             return node;
         }
     }
