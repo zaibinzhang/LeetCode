@@ -1,4 +1,8 @@
-﻿namespace LeetCode.Model
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Text;
+
+namespace LeetCode.Model
 {
     public class TreeNode
     {
@@ -8,16 +12,25 @@
         public TreeNode(int x) { val = x; }
         public override string ToString()
         {
-            return Log(this).Trim(',', 'n', 'u', 'l');
+            Queue<TreeNode> queue = new Queue<TreeNode>();
+            StringBuilder sb = new StringBuilder();
+            queue.Enqueue(this);
+            while (queue.Count > 0)
+            {
+                TreeNode node = queue.Dequeue();
+                if (node != null)
+                {
+                    sb.Append(node.val + ",");
+                    queue.Enqueue(node.left);
+                    queue.Enqueue(node.right);
+                }
+                else
+                {
+                    sb.Append("null,");
+                }
+            }
+            return sb.ToString().Trim(',', 'n', 'u', 'l');
         }
 
-        private string Log(TreeNode node)
-        {
-            if (node == null)
-            {
-                return "null";
-            }
-            return node.val + "," + Log(node.left) + "," + Log(node.right);
-        }
     }
 }
