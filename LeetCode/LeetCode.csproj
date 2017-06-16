@@ -66,6 +66,7 @@
     <Compile Include="Algorithm\RomantoInteger.cs" />
     <Compile Include="Algorithm\SearchinRotatedSortedArray.cs" />
     <Compile Include="Algorithm\SimplifyPath.cs" />
+    <Compile Include="Algorithm\SortedListToBST.cs" />
     <Compile Include="Algorithm\StringtoInteger%28atoi%29.cs" />
     <Compile Include="Algorithm\Subsets.cs" />
     <Compile Include="Algorithm\SubsetsII.cs" />
