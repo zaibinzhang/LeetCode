@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Algorithm\BuildTree2Tests.cs" />
     <Compile Include="Algorithm\BuildTreeTests.cs" />
+    <Compile Include="Algorithm\FindMedianSortedArrays.cs" />
     <Compile Include="Algorithm\NumDecodingsTests.cs" />
     <Compile Include="Algorithm\RestoreIpAddressesTests.cs" />
     <Compile Include="Algorithm\ReverseBetweenTests.cs" />
